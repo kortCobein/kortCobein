@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="./assets/main-banner.svg" alt="Kurt Cobain — kortCobein, Software Developer" />
+<img width="100%" src="./assets/main-banner.svg?v=2" alt="Kurt Cobain — kortCobein, Software Developer" />
 <img src="https://komarev.com/ghpvc/?username=kortCobein&label=PROFILE%20VIEWS&color=7F52FF&labelColor=0D1117&style=for-the-badge" alt="Profile views" />
 
 </div>
