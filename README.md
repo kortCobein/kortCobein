@@ -1,19 +1,19 @@
 <div align="center">
 
+<a href="https://iokort.com/" title="iokort.com"><img height="44" src="https://iokort.com/mcp/api/file.php?id=73a03cf3-2917-4eb9-9865-93bb07d47d3a" alt="iokort.com" /></a>
+
+<br />
+
 <img width="100%" src="./assets/main-banner-v2.svg" alt="Kurt Cobain — kortCobein, Software Developer" />
 <img src="https://komarev.com/ghpvc/?username=kortCobein&label=PROFILE%20VIEWS&color=7F52FF&labelColor=0D1117&style=for-the-badge" alt="Profile views" />
+
+<br /><br />
+
+<img width="100%" src="./assets/about-reel.svg" alt="Alternating overview of Kort's software development work" />
 
 </div>
 
 <div align="center">
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:7F52FF,55:02569B,100:0D1117&height=105&section=header&text=%F0%9F%91%8B%20About%20Me&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="About Me" />
-
-<br />
-
-<img width="100%" src="./assets/about-reel.svg" alt="Alternating overview of Kort's software development work" />
-
-<br /><br />
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,45:02569B,100:7F52FF&height=105&section=header&text=%F0%9F%A7%A9%20Development%20Areas&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="Development Areas" />
 
@@ -67,13 +67,11 @@
 
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,45:02569B,100:7F52FF&height=105&section=header&text=%F0%9F%8C%90%20Social%20Media&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="Social Media" />
+<img width="72%" src="https://capsule-render.vercel.app/api?type=transparent&height=72&section=header&text=Social%20Media&fontSize=25&fontColor=A98BFF&animation=twinkling" alt="Social Media" />
 
-<br />
-
-<a href="mailto:kortcobein@iokort.com" title="Email"><img width="52" height="52" src="https://api.iconify.design/material-icon-theme:email.svg" alt="Email" /></a>
+<a href="mailto:kortcobein@iokort.com" title="Email"><img width="52" height="52" src="./assets/gmail-icon.svg" alt="Email" /></a>
 &nbsp;&nbsp;
-<a href="https://iokort.com/" title="iokort.com"><img width="52" height="52" src="https://api.iconify.design/mdi:web.svg?color=%2358A6FF" alt="Website" /></a>
+<a href="https://iokort.com/" title="iokort.com"><img width="52" height="52" src="https://iokort.com/mcp/api/file.php?id=3b5aa395-aaa3-4963-8dd7-ace8cc933e29" alt="Website" /></a>
 &nbsp;&nbsp;
 <a href="https://www.instagram.com/kort.cvs.io/" title="Instagram"><img width="52" height="52" src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" /></a>
 &nbsp;&nbsp;
