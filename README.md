@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<img width="100%" src="./assets/profile-window.svg" alt="kortCobein profile inside a macOS-style window" />
+<img width="100%" src="./assets/profile-macos.svg" alt="kortCobein profile inside a macOS-style window" />
 
 </div>
 
