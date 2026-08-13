@@ -16,9 +16,7 @@
 
 <br />
 
-Software development focused on **mobile, web, and backend solutions**, covering everything from **interfaces and business logic** to databases, integrations, automation, and services.
-
-This space brings together **academic, institutional, and personal projects**, along with prototypes, experiments, and new areas of development as my work evolves.
+<img width="100%" src="./assets/about-reel.svg" alt="Alternating overview of Kort's software development work" />
 
 <br />
 
