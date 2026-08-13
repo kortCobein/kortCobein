@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Git Bash</title>
+  <desc id="desc">Multicolor Git Bash symbol.</desc>
+  <rect x="2" y="2" width="60" height="60" rx="13" fill="#242938"/>
+  <g transform="translate(32 32) rotate(45)">
+    <rect x="-22" y="-22" width="20" height="20" rx="3" fill="#F05033"/>
+    <rect x="2" y="-22" width="20" height="20" rx="3" fill="#7BC043"/>
+    <rect x="-22" y="2" width="20" height="20" rx="3" fill="#0392CF"/>
+    <rect x="2" y="2" width="20" height="20" rx="3" fill="#FDF498"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 21v17c0 6 4 9 10 9h8"/>
+    <path d="M22 29h11c5 0 8-3 8-8"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="22" cy="20" r="4.2"/>
+    <circle cx="22" cy="30" r="4.2"/>
+    <circle cx="41" cy="20" r="4.2"/>
+    <circle cx="42" cy="47" r="4.2"/>
+  </g>
+</svg>
