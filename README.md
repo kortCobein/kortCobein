@@ -11,6 +11,11 @@
 
 </div>
 
+</td>
+</tr>
+<tr>
+<td align="center" bgcolor="#0D1117">
+
 <div align="center">
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,45:02569B,100:7F52FF&height=105&section=header&text=%F0%9F%A7%A9%20Development%20Areas&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="Development Areas" />
@@ -95,6 +100,11 @@
 <img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=kortCobein&bg_color=0D1117&color=58A6FF&line=7F52FF&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" alt="Kort's contribution activity graph" />
 
 </div>
+
+</td>
+</tr>
+<tr>
+<td align="center">
 
 <div align="center">
 
