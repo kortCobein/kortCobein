@@ -47,21 +47,27 @@
 
 <div align="center">
 
-### Mobile
+<img width="72%" src="https://capsule-render.vercel.app/api?type=transparent&height=72&section=header&text=Development%20%C2%B7%20Languages&fontSize=25&fontColor=58A6FF&animation=twinkling" alt="Development and Languages" />
 
-<img src="https://skillicons.dev/icons?i=flutter,dart,kotlin,androidstudio,java&theme=dark" alt="Flutter, Dart, Kotlin, Android Studio, and Java" />
+<img src="https://skillicons.dev/icons?i=flutter,dart,kotlin,java,python,cpp&theme=dark" alt="Flutter, Dart, Kotlin, Java, Python, and C++" />
 
-### Web & Backend
+<br /><br />
 
-<img src="https://skillicons.dev/icons?i=react,typescript,javascript,nodejs,php,html,css&theme=dark" alt="React, TypeScript, JavaScript, Node.js, PHP, HTML, and CSS" />
+<img width="72%" src="https://capsule-render.vercel.app/api?type=transparent&height=72&section=header&text=Web%20%C2%B7%20Backend&fontSize=25&fontColor=A98BFF&animation=twinkling" alt="Web and Backend" />
 
-### Data, Tools & Other Languages
+<img src="https://skillicons.dev/icons?i=react,typescript,javascript,nodejs,php,html,css,mysql&theme=dark" alt="React, TypeScript, JavaScript, Node.js, PHP, HTML, CSS, and MySQL" />
 
-<img src="https://skillicons.dev/icons?i=mysql,python,cpp,git,github,vscode&theme=dark" alt="MySQL, Python, C++, Git, GitHub, and VS Code" />
+<br /><br />
 
-### Design & Productivity
+<img width="72%" src="https://capsule-render.vercel.app/api?type=transparent&height=72&section=header&text=Tools&fontSize=25&fontColor=58A6FF&animation=twinkling" alt="Tools" />
+
+<img src="https://skillicons.dev/icons?i=androidstudio,idea,git,github,vscode&theme=dark" alt="Android Studio, IntelliJ IDEA, Git, GitHub, and VS Code" />
+
+<br /><br />
 
 <p>
+  <img width="52" height="52" src="https://api.iconify.design/simple-icons:openai.svg?color=%2310A37F" alt="ChatGPT" title="ChatGPT" />
+  &nbsp;&nbsp;
   <img width="52" height="52" src="https://api.iconify.design/vscode-icons:file-type-photoshop.svg" alt="Adobe Photoshop" title="Adobe Photoshop" />
   &nbsp;&nbsp;
   <img width="52" height="52" src="https://api.iconify.design/vscode-icons:file-type-word.svg" alt="Microsoft Word" title="Microsoft Word" />
@@ -71,7 +77,7 @@
   <img width="52" height="52" src="https://api.iconify.design/vscode-icons:file-type-powerpoint.svg" alt="Microsoft PowerPoint" title="Microsoft PowerPoint" />
 </p>
 
-<sub><b>Photoshop · Word · Excel · PowerPoint</b></sub>
+<sub><b>ChatGPT · Photoshop · Word · Excel · PowerPoint</b></sub>
 
 </div>
 
