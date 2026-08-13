@@ -1,12 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7F52FF,50:02569B,100:0D1117&height=220&section=header&text=Kurt%20Cobain&fontSize=48&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=kortCobein%20%C2%B7%20Software%20Developer&descAlignY=58&descSize=18" alt="Kurt Cobain - Software Developer" />
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&pause=900&color=58A6FF&center=true&vCenter=true&width=720&lines=Mobile+%26+Cross-platform+Development;Web+%26+Backend+Solutions;Automation+%C2%B7+Applied+AI+%C2%B7+Prototyping" alt="Development areas" />
-
-<br />
-
-<img src="https://komarev.com/ghpvc/?username=kortCobein&label=Profile%20views&color=7F52FF&style=flat-square" alt="Profile views" />
+<img width="100%" src="./assets/main-banner.svg" alt="Kurt Cobain — kortCobein, Software Developer" />
 
 </div>
 
@@ -17,15 +11,6 @@
 <br />
 
 <img width="100%" src="./assets/about-reel.svg" alt="Alternating overview of Kort's software development work" />
-
-<br />
-
-<img src="https://img.shields.io/badge/INTERFACES-7F52FF?style=for-the-badge&labelColor=0D1117" alt="Interfaces" />
-<img src="https://img.shields.io/badge/BUSINESS%20LOGIC-02569B?style=for-the-badge&labelColor=0D1117" alt="Business Logic" />
-<img src="https://img.shields.io/badge/DATABASES-58A6FF?style=for-the-badge&labelColor=0D1117" alt="Databases" />
-<img src="https://img.shields.io/badge/INTEGRATIONS-7F52FF?style=for-the-badge&labelColor=0D1117" alt="Integrations" />
-<img src="https://img.shields.io/badge/AUTOMATION-02569B?style=for-the-badge&labelColor=0D1117" alt="Automation" />
-<img src="https://img.shields.io/badge/SERVICES-58A6FF?style=for-the-badge&labelColor=0D1117" alt="Services" />
 
 <br /><br />
 
@@ -43,9 +28,9 @@
 
 </div>
 
-## 🛠️ Technologies
-
 <div align="center">
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:7F52FF,45:02569B,100:0D1117&height=105&section=header&text=%F0%9F%9B%A0%EF%B8%8F%20Technologies&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="Technologies" />
 
 <img width="72%" src="https://capsule-render.vercel.app/api?type=transparent&height=72&section=header&text=Development%20%C2%B7%20Languages&fontSize=25&fontColor=58A6FF&animation=twinkling" alt="Development and Languages" />
 
@@ -61,12 +46,12 @@
 
 <img width="72%" src="https://capsule-render.vercel.app/api?type=transparent&height=72&section=header&text=Tools&fontSize=25&fontColor=58A6FF&animation=twinkling" alt="Tools" />
 
-<img src="https://skillicons.dev/icons?i=androidstudio,idea,git,github,vscode&theme=dark" alt="Android Studio, IntelliJ IDEA, Git, GitHub, and VS Code" />
-
-<br /><br />
-
 <p>
-  <img width="52" height="52" src="https://api.iconify.design/simple-icons:openai.svg?color=%2310A37F" alt="ChatGPT" title="ChatGPT" />
+  <img height="52" src="https://skillicons.dev/icons?i=androidstudio,idea,github,vscode&theme=dark" alt="Android Studio, IntelliJ IDEA, GitHub, and VS Code" />
+  &nbsp;&nbsp;
+  <img width="52" height="52" src="./assets/git-bash.svg" alt="Git Bash" title="Git Bash" />
+  &nbsp;&nbsp;
+  <img width="52" height="52" src="https://api.iconify.design/simple-icons:openai.svg?color=%23A98BFF" alt="ChatGPT" title="ChatGPT" />
   &nbsp;&nbsp;
   <img width="52" height="52" src="https://api.iconify.design/vscode-icons:file-type-photoshop.svg" alt="Adobe Photoshop" title="Adobe Photoshop" />
   &nbsp;&nbsp;
@@ -77,13 +62,35 @@
   <img width="52" height="52" src="https://api.iconify.design/vscode-icons:file-type-powerpoint.svg" alt="Microsoft PowerPoint" title="Microsoft PowerPoint" />
 </p>
 
-<sub><b>ChatGPT · Photoshop · Word · Excel · PowerPoint</b></sub>
+</div>
+
+<div align="center">
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:0D1117,45:02569B,100:7F52FF&height=105&section=header&text=%F0%9F%8C%90%20Social%20Media&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="Social Media" />
+
+<br />
+
+<a href="mailto:kortcobein@iokort.com" title="Email"><img width="52" height="52" src="https://api.iconify.design/material-icon-theme:email.svg" alt="Email" /></a>
+&nbsp;&nbsp;
+<a href="https://iokort.com/" title="iokort.com"><img width="52" height="52" src="https://api.iconify.design/mdi:web.svg?color=%2358A6FF" alt="Website" /></a>
+&nbsp;&nbsp;
+<a href="https://www.instagram.com/kort.cvs.io/" title="Instagram"><img width="52" height="52" src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" /></a>
+&nbsp;&nbsp;
+<a href="https://www.facebook.com/profile.php?id=61593048603074" title="Facebook"><img width="52" height="52" src="https://api.iconify.design/logos:facebook.svg" alt="Facebook" /></a>
+&nbsp;&nbsp;
+<a href="https://www.threads.com/@kort.cvs.io" title="Threads"><img width="52" height="52" src="https://api.iconify.design/simple-icons:threads.svg?color=%23FFFFFF" alt="Threads" /></a>
+&nbsp;&nbsp;
+<a href="https://wa.me/524271020130" title="WhatsApp"><img width="52" height="52" src="https://api.iconify.design/logos:whatsapp-icon.svg" alt="WhatsApp" /></a>
+&nbsp;&nbsp;
+<a href="https://me.developers.google.com/u/111955133501125373518" title="Google Developer Profile"><img width="52" height="52" src="https://api.iconify.design/logos:google-icon.svg" alt="Google Developer Profile" /></a>
 
 </div>
 
-## 📊 Activity
-
 <div align="center">
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=soft&color=0:7F52FF,45:02569B,100:0D1117&height=105&section=header&text=%F0%9F%93%8A%20Activity&fontSize=32&fontColor=FFFFFF&animation=fadeIn" alt="Activity" />
+
+<br />
 
 <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=kortCobein&theme=github_dark" alt="Kort's GitHub statistics" />
 <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=kortCobein&theme=github_dark&utcOffset=-6" alt="Kort's contribution time" />
