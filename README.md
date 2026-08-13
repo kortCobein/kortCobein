@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7F52FF,50:02569B,100:0D1117&height=220&section=header&text=Kurt%20Cobain&fontSize=48&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=kortCobein%20%C2%B7%20Software%20Developer&descAlignY=58&descSize=18" alt="Kurt Cobain - Software Developer" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7F52FF,50:02569B,100:0D1117&height=220&section=header&text=Kurt%20Cobain&fontSize=48&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=ioKort%20%C2%B7%20Software%20Developer&descAlignY=58&descSize=18" alt="Kurt Cobain - Software Developer" />
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&pause=900&color=58A6FF&center=true&vCenter=true&width=720&lines=Aplicaciones+m%C3%B3viles+%C2%B7+Web+%C2%B7+Backend;Flutter+%C2%B7+React+%C2%B7+Python+%C2%B7+C%2B%2B;Automatizaci%C3%B3n+%C2%B7+Datos+%C2%B7+Inteligencia+Artificial" alt="Áreas y tecnologías" />
 
