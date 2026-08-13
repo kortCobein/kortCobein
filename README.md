@@ -1,15 +1,10 @@
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+
 <div align="center">
 
-<a href="https://iokort.com/" title="iokort.com"><img height="44" src="https://iokort.com/mcp/api/file.php?id=73a03cf3-2917-4eb9-9865-93bb07d47d3a" alt="iokort.com" /></a>
-
-<br />
-
-<img width="100%" src="./assets/main-banner-v2.svg" alt="Kurt Cobain — kortCobein, Software Developer" />
-<img src="https://komarev.com/ghpvc/?username=kortCobein&label=PROFILE%20VIEWS&color=7F52FF&labelColor=0D1117&style=for-the-badge" alt="Profile views" />
-
-<br /><br />
-
-<img width="100%" src="./assets/about-reel.svg" alt="Alternating overview of Kort's software development work" />
+<img width="100%" src="./assets/profile-window.svg" alt="kortCobein profile inside a macOS-style window" />
 
 </div>
 
@@ -100,6 +95,10 @@
 
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:02569B,100:7F52FF&height=110&section=footer" alt="" />
+<img width="100%" src="./assets/mac-window-footer.svg" alt="Profile window status bar" />
 
 </div>
+
+</td>
+</tr>
+</table>
