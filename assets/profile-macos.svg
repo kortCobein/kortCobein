@@ -48,8 +48,7 @@
 </defs>
 <g clip-path="url(#windowClip)">
 <rect width="1000" height="470" fill="#0D1117"/>
-<rect width="1000" height="52" fill="#161B22"/>
-<circle cx="26" cy="26" r="7" fill="#FF5F57"/><circle cx="50" cy="26" r="7" fill="#FEBC2E"/><circle cx="74" cy="26" r="7" fill="#28C840"/>
+
 <rect y="52" width="1000" height="418" fill="url(#bg)"/>
 <rect x="-46" y="6" width="1092" height="510" fill="url(#hdGrid)" class="heroGrid"/>
 <circle cx="930" cy="135" r="135" fill="#8B5CF6" opacity=".07" class="heroOrb"/>
@@ -91,5 +90,9 @@
 <circle cx="68" cy="397" r="4" fill="#8B5CF6" filter="url(#glow)"/>
 <rect x="84" y="395" width="52" height="4" rx="2" fill="#3B82F6"/>
 <rect x="144" y="395" width="30" height="4" rx="2" fill="#334155"/>
+<g data-ui="solid-titlebar">
+<rect width="1000" height="52" fill="#161B22"/>
+<circle cx="26" cy="26" r="7" fill="#FF5F57"/><circle cx="50" cy="26" r="7" fill="#FEBC2E"/><circle cx="74" cy="26" r="7" fill="#28C840"/>
+</g>
 </g>
 </svg>
