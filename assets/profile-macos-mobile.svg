@@ -7,6 +7,7 @@
   <linearGradient id="rm" x1="224" y1="218" x2="496" y2="480"><stop stop-color="#8B5CF6"/><stop offset=".52" stop-color="#3B82F6"/><stop offset="1" stop-color="#22D3A7"/></linearGradient>
   <filter id="counterBlur" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>
   <clipPath id="sm"><rect x="62" y="562" width="596" height="205"/></clipPath>
+  <pattern id="hmGrid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M0 11H17V0M46 35H29V46" fill="none" stroke="#67E8F9" stroke-opacity=".13"/><circle cx="17" cy="11" r="1.5" fill="#A78BFA" opacity=".42"/></pattern><linearGradient id="hmBeam"><stop stop-color="#8B5CF6" stop-opacity="0"/><stop offset=".5" stop-color="#67E8F9"/><stop offset="1" stop-color="#22D3A7" stop-opacity="0"/></linearGradient>
   <style>
     .ui{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
     .slide{animation:show 12s infinite cubic-bezier(.55,0,.2,1)}.second{animation-delay:6s;opacity:0}
@@ -18,7 +19,10 @@
       0%,100%{fill:#B86BFF;filter:drop-shadow(0 0 4px #8B5CF6) drop-shadow(0 0 14px #7C3AED)}
       50%{fill:#67E8F9;filter:drop-shadow(0 0 4px #22D3EE) drop-shadow(0 0 16px #06B6D4)}
     }
-    @media (prefers-reduced-motion:reduce){.slide{animation:none}.second{display:none}.counter,.counterHalo{animation:none;fill:#67E8F9}}
+
+    .heroGrid{animation:heroGrid 20s linear infinite}.heroOrb{animation:heroOrb 9s ease-in-out infinite alternate}.heroBeam{animation:heroBeam 7.5s linear infinite}.neonName{animation:heroName 5s ease-in-out infinite}
+    @keyframes heroGrid{to{transform:translate(46px,46px)}}@keyframes heroOrb{to{transform:translate(-95px,85px);opacity:.16}}@keyframes heroBeam{0%{transform:translateY(-30px);opacity:0}15%,82%{opacity:.42}100%{transform:translateY(850px);opacity:0}}@keyframes heroName{0%,100%{fill:#FFFFFF;filter:drop-shadow(0 0 2px #3B82F6)}50%{fill:#E9D5FF;filter:drop-shadow(0 0 9px #8B5CF6) drop-shadow(0 0 15px #22D3EE)}}
+    @media (prefers-reduced-motion:reduce){.slide{animation:none.heroGrid,.heroOrb,.heroBeam,.neonName{animation:none!important}.heroBeam{display:none}}.second{display:none}.counter,.counterHalo{animation:none;fill:#67E8F9}}
   </style>
   <clipPath id="windowClip"><path d="M20 0H700A20 20 0 0 1 720 20V850H0V20A20 20 0 0 1 20 0Z"/></clipPath>
 </defs>
@@ -27,9 +31,12 @@
 <rect width="720" height="64" fill="#161B22"/>
 <circle cx="28" cy="32" r="8" fill="#FF5F57"/><circle cx="55" cy="32" r="8" fill="#FEBC2E"/><circle cx="82" cy="32" r="8" fill="#28C840"/>
 <rect y="64" width="720" height="786" fill="url(#bgm)"/>
+<rect x="-46" y="18" width="812" height="878" fill="url(#hmGrid)" class="heroGrid"/>
+<circle cx="660" cy="165" r="150" fill="#8B5CF6" opacity=".07" class="heroOrb"/>
+<rect x="0" y="44" width="720" height="3" fill="url(#hmBeam)" class="heroBeam"/>
 <circle cx="660" cy="115" r="145" fill="#22D3A7" fill-opacity=".04"/>
 <text x="360" y="120" text-anchor="middle" fill="#7DD3FC" font-size="15" font-weight="800" letter-spacing="3.5" class="mono">HELLO, I AM</text>
-<text x="360" y="178" text-anchor="middle" fill="#FFFFFF" font-size="48" font-weight="850" class="ui">kortCobein</text>
+<text x="360" y="178" text-anchor="middle" fill="#FFFFFF" font-size="48" font-weight="850" class="ui neonName">kortCobein</text>
 <text x="360" y="216" text-anchor="middle" fill="#C8D4E6" font-size="19" font-weight="650" class="ui">Software Developer</text>
 <g transform="translate(360 350)">
   <circle r="130" fill="#061827" fill-opacity=".84"/><circle r="120" stroke="url(#rm)" stroke-width="4"/><circle r="105" stroke="#72D8FF" stroke-opacity=".28"/>

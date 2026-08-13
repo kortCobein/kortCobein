@@ -21,6 +21,7 @@
   </filter>
   <filter id="counterBlur" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7"/></filter>
   <clipPath id="stage"><rect x="68" y="235" width="638" height="150" rx="0"/></clipPath>
+  <pattern id="hdGrid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M0 11H17V0M46 35H29V46" fill="none" stroke="#67E8F9" stroke-opacity=".13"/><circle cx="17" cy="11" r="1.5" fill="#A78BFA" opacity=".42"/></pattern><linearGradient id="hdBeam"><stop stop-color="#8B5CF6" stop-opacity="0"/><stop offset=".5" stop-color="#67E8F9"/><stop offset="1" stop-color="#22D3A7" stop-opacity="0"/></linearGradient>
   <style>
     .ui{font-family:Inter,Segoe UI,Arial,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
@@ -38,7 +39,10 @@
       0%,100%{fill:#B86BFF;filter:drop-shadow(0 0 3px #8B5CF6) drop-shadow(0 0 11px #7C3AED)}
       50%{fill:#67E8F9;filter:drop-shadow(0 0 3px #22D3EE) drop-shadow(0 0 13px #06B6D4)}
     }
-    @media (prefers-reduced-motion:reduce){.slide{animation:none}.second{display:none}.counter,.counterHalo{animation:none;fill:#67E8F9}}
+
+    .heroGrid{animation:heroGrid 20s linear infinite}.heroOrb{animation:heroOrb 9s ease-in-out infinite alternate}.heroBeam{animation:heroBeam 7.5s linear infinite}.neonName{animation:heroName 5s ease-in-out infinite}
+    @keyframes heroGrid{to{transform:translate(46px,46px)}}@keyframes heroOrb{to{transform:translate(-150px,60px);opacity:.17}}@keyframes heroBeam{0%{transform:translateY(-30px);opacity:0}15%,82%{opacity:.42}100%{transform:translateY(470px);opacity:0}}@keyframes heroName{0%,100%{fill:#FFFFFF;filter:drop-shadow(0 0 2px #3B82F6)}50%{fill:#E9D5FF;filter:drop-shadow(0 0 9px #8B5CF6) drop-shadow(0 0 15px #22D3EE)}}
+    @media (prefers-reduced-motion:reduce){.slide{animation:none.heroGrid,.heroOrb,.heroBeam,.neonName{animation:none!important}.heroBeam{display:none}}.second{display:none}.counter,.counterHalo{animation:none;fill:#67E8F9}}
   </style>
   <clipPath id="windowClip"><path d="M20 0H980A20 20 0 0 1 1000 20V470H0V20A20 20 0 0 1 20 0Z"/></clipPath>
 </defs>
@@ -47,11 +51,14 @@
 <rect width="1000" height="52" fill="#161B22"/>
 <circle cx="26" cy="26" r="7" fill="#FF5F57"/><circle cx="50" cy="26" r="7" fill="#FEBC2E"/><circle cx="74" cy="26" r="7" fill="#28C840"/>
 <rect y="52" width="1000" height="418" fill="url(#bg)"/>
+<rect x="-46" y="6" width="1092" height="510" fill="url(#hdGrid)" class="heroGrid"/>
+<circle cx="930" cy="135" r="135" fill="#8B5CF6" opacity=".07" class="heroOrb"/>
+<rect x="0" y="32" width="1000" height="3" fill="url(#hdBeam)" class="heroBeam"/>
 <path d="M0 416C145 382 252 448 404 420C567 390 650 435 782 404C870 384 927 385 1000 364V470H0V416Z" fill="#07111D" fill-opacity=".72"/>
 <path d="M0 416C145 382 252 448 404 420C567 390 650 435 782 404C870 384 927 385 1000 364" stroke="url(#accent)" stroke-width="2"/>
 <circle cx="955" cy="94" r="128" fill="#22D3A7" fill-opacity=".035"/><circle cx="901" cy="94" r="92" fill="#8B5CF6" fill-opacity=".04"/>
 <text x="68" y="104" fill="#7DD3FC" font-size="12" font-weight="800" letter-spacing="3.2" class="mono">HELLO, I AM</text>
-<text x="68" y="157" fill="#FFFFFF" font-size="48" font-weight="850" letter-spacing="-1.4" class="ui">kortCobein</text>
+<text x="68" y="157" fill="#FFFFFF" font-size="48" font-weight="850" letter-spacing="-1.4" class="ui neonName">kortCobein</text>
 <text x="69" y="188" fill="#C8D4E6" font-size="17" font-weight="650" class="ui">Software Developer · Mobile · Web · Backend</text>
 <rect x="68" y="212" width="638" height="2" rx="1" fill="url(#accent)"/>
 <text x="68" y="237" fill="#80BFFF" font-size="11" font-weight="800" letter-spacing="2.4" class="mono">ABOUT / CURRENT FOCUS</text>
