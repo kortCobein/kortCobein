@@ -9,21 +9,21 @@
 
 <br />
 
-<a href="https://github.com/ryo-ma/github-profile-trophy">
+<a href="https://github.com/kortCobein">
   <img
     width="100%"
-    src="https://github-profile-trophy.vercel.app/?username=kortCobein&theme=aura&no-frame=true&no-bg=true&margin-w=8&margin-h=8&column=-1"
+    src="https://raw.githubusercontent.com/kortCobein/kortCobein/profile-assets/trophy.svg"
     alt="GitHub trophies"
   />
 </a>
 
 <br />
 
-<a href="https://github.com/bhoopeshrk/github-readme-activity-graph">
+<a href="https://github.com/kortCobein">
   <img
     width="100%"
-    src="https://github-readme-activity-graph.vercel.app/graph?username=kortCobein&bg_color=0D1117&color=67E8F9&title_color=A98BFF&line=7F52FF&point=22D3A7&area=true&area_color=7F52FF&hide_border=true&radius=10&custom_title=Contribution%20Activity"
-    alt="GitHub contribution activity"
+    src="https://raw.githubusercontent.com/kortCobein/kortCobein/profile-assets/activity-90d.svg"
+    alt="GitHub contribution activity for the last 90 days"
   />
 </a>
 
