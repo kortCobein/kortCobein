@@ -1,0 +1,65 @@
+name: Refresh profile metrics
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "README.md"
+      - ".github/workflows/profile-metrics.yml"
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Generate trophy card
+        uses: soulteary/github-profile-trophy-action@v1.0.0
+        with:
+          options: 'username=${{ github.repository_owner }}&theme=aura&no-frame=true&no-bg=true&margin-w=8&margin-h=8&column=-1'
+          path: profile-dist/trophy.svg
+          token: ${{ github.token }}
+
+      - name: Generate contribution charts
+        uses: dturovskiy/deus-commit-chart@v1
+        with:
+          username: ${{ github.repository_owner }}
+          token: ${{ github.token }}
+          default-days: '90'
+          ranges: '30,90,365'
+          theme: github-compact
+          layout: spacious
+          hide-border: 'true'
+          output-dir: profile-dist/activity
+
+      - name: Publish generated assets
+        env:
+          TARGET_BRANCH: profile-assets
+        run: |
+          set -euo pipefail
+
+          temp_dir="$(mktemp -d)"
+          cp profile-dist/trophy.svg "$temp_dir/trophy.svg"
+          cp profile-dist/activity/activity-30d.svg "$temp_dir/activity-30d.svg"
+          cp profile-dist/activity/activity-90d.svg "$temp_dir/activity-90d.svg"
+          cp profile-dist/activity/activity-365d.svg "$temp_dir/activity-365d.svg"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git switch --orphan "$TARGET_BRANCH"
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a "$temp_dir"/. .
+
+          git add -A
+          git commit -m "chore: refresh profile metrics"
+          git push --force origin "$TARGET_BRANCH"
