@@ -41,6 +41,21 @@ foreach($names as $dest=>$origin){
  rename($temp,$path);chmod($path,0644);status('INSTALLED '.$dest.' '.$copied);
 }
 $za->close();
+$ff=trim((string)@shell_exec('command -v ffmpeg 2>/dev/null'));
+status('FFMPEG '.($ff?:'NOT_AVAILABLE'));
+if($ff){
+ $crops=['v-401.mp4'=>'h-401.mp4','v-410.mp4'=>'h-410.mp4','v-503.mp4'=>'h-503.mp4'];
+ foreach($crops as $dst=>$src){
+  $path=$vid.'/'.$dst;$tmp=$path.'.tmp.mp4';
+  if(is_file($path)&&filesize($path)>30000){status('CROP_KEEP '.$dst);continue;}
+  $filter='scale=540:960:force_original_aspect_ratio=increase,crop=540:960';
+  $cmd=escapeshellarg($ff).' -y -nostdin -hide_banner -loglevel error -i '.escapeshellarg($vid.'/'.$src).' -t 9 -an -vf '.escapeshellarg($filter).' -c:v libx264 -preset ultrafast -crf 33 -pix_fmt yuv420p -movflags +faststart '.escapeshellarg($tmp).' 2>&1';
+  $lines=[];$exit=1;@exec($cmd,$lines,$exit);
+  if($exit===0&&is_file($tmp)&&filesize($tmp)>30000){rename($tmp,$path);chmod($path,0644);status('CROP_INSTALLED '.$dst.' '.filesize($path));}
+  else{status('CROP_UNAVAILABLE '.$dst.' '.implode(' ',array_slice($lines,-1)));@unlink($tmp);}
+ }
+}
+
 $js="(()=>{const v=document.querySelector('[data-error-video]');if(!v)return;const code=v.dataset.code;const mobile=matchMedia('(max-width:700px), (orientation:portrait)').matches;const b='/error_pages/assets/videos/';const first=b+(mobile?'v-':'h-')+code+'.mp4';const fallback=b+'h-'+code+'.mp4';let swapped=false;v.addEventListener('error',()=>{if(swapped)return;swapped=true;v.src=fallback;v.load();v.play().catch(()=>{});});v.src=first;v.load();v.play().catch(()=>{});})();";
 file_put_contents($root.'/public_html/error_pages/assets/js/error.js',$js);
 status('COMPLETE all nine originals installed');
