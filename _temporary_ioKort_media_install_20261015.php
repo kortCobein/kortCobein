@@ -1,57 +1,46 @@
 <?php
-error_reporting(E_ALL);set_time_limit(0);
-$base='/home/u899160275/domains/iokort.com';
-$target=$base.'/public_html/error_pages/assets/videos';
-$archive=$base.'/.apis/.original_errors_media_20261015.zip';
-$lock=$base.'/.apis/.errors_media_install.lock';
-$log=$base.'/.apis/errors_media_install.log';
-$source='https://d2ol7oe51mr4n9.cloudfront.net/user_3KUpBA6Sdv2wiQ3QyedHD5iKLX0/4b53454d-f935-43c9-a7ec-6f4ece773f00.zip';
+error_reporting(E_ALL);ini_set('display_errors','1');set_time_limit(0);
+$root='/home/u899160275/domains/iokort.com';
+$vid=$root.'/public_html/error_pages/assets/videos';
+$zipfile=$root.'/.apis/.original_errors_media_20261015.zip';
+$log=$root.'/public_html/error_pages/assets/install_status.txt';
 $names=json_decode('{"h-401.mp4":"192779-893446888_medium.mp4","h-403.mp4":"48420-453832153_medium.mp4","h-404.mp4":"170655-843752693_medium.mp4","h-410.mp4":"359071_medium.mp4","h-500.mp4":"317899_medium.mp4","h-503.mp4":"143859-784164176_medium.mp4","v-403.mp4":"311497_medium.mp4","v-404.mp4":"362312_medium.mp4","v-500.mp4":"377093_medium.mp4"}',true);
-function logm($s){global $log;file_put_contents($log,gmdate('c')." ".$s."\n",FILE_APPEND);echo $s."\n";}
-if(!is_dir(dirname($lock)))mkdir(dirname($lock),0750,true);
-$fp=fopen($lock,'c');if(!$fp||!flock($fp,LOCK_EX|LOCK_NB))exit(0);
-if(!is_dir($target))mkdir($target,0755,true);
-if(!is_file($archive)||filesize($archive)<60000000){
- logm('Downloading original user archive');
- $curl=trim((string)shell_exec('command -v curl'));if(!$curl)$curl='/usr/bin/curl';
- $cmd=escapeshellarg($curl).' -fL --retry 2 --connect-timeout 30 --max-time 250 '.escapeshellarg($source).' -o '.escapeshellarg($archive);
- exec($cmd.' 2>&1',$out,$rc);
- if($rc!==0||!is_file($archive)||filesize($archive)<60000000){logm('DOWNLOAD_FAILED '.$rc.' '.implode(' ',array_slice($out,-3)));exit(3);}
- logm('Download complete '.filesize($archive));
-}
-$zipclass=class_exists('ZipArchive');$zip=null;
-if($zipclass){$zip=new ZipArchive();if($zip->open($archive)!==true){logm('ZIP_BAD');exit(4);}}
-foreach($names as $dest=>$entry){
- $path=$target.'/'.$dest;
- if(is_file($path)&&filesize($path)>100000){logm('KEEP '.$dest);continue;}
- $tmp=$path.'.installing';
- if($zipclass){
-  $reader=$zip->getStream($entry);if(!$reader){logm('ENTRY_NOT_FOUND '.$entry);exit(5);}
-  $writer=fopen($tmp,'wb');if(!$writer){logm('CANT_WRITE '.$dest);exit(6);}
-  stream_copy_to_stream($reader,$writer);fclose($reader);fclose($writer);
+$src='https://d2ol7oe51mr4n9.cloudfront.net/user_3KUpBA6Sdv2wiQ3QyedHD5iKLX0/4b53454d-f935-43c9-a7ec-6f4ece773f00.zip';
+function status($s){global $log; file_put_contents($log,date('c')." ".$s."\n",FILE_APPEND);echo $s."\n";}
+if(!is_dir($vid))mkdir($vid,0755,true);
+status('START PHP '.PHP_VERSION.' ZIP:'.(class_exists('ZipArchive')?'yes':'no').' CURL:'.(function_exists('curl_init')?'yes':'no').' URLFOPEN:'.ini_get('allow_url_fopen'));
+if(!is_file($zipfile)||filesize($zipfile)<80000000){
+ $temp=$zipfile.'.download';
+ $out=fopen($temp,'wb');if(!$out){status('ERROR open temp');exit(11);}
+ if(function_exists('curl_init')){
+  $ch=curl_init($src);
+  curl_setopt_array($ch,[CURLOPT_FILE=>$out,CURLOPT_FOLLOWLOCATION=>true,CURLOPT_CONNECTTIMEOUT=>30,CURLOPT_TIMEOUT=>270,CURLOPT_USERAGENT=>'ioKortMediaInstall/1.0',CURLOPT_FAILONERROR=>true]);
+  $ok=curl_exec($ch);$err=curl_error($ch);$code=curl_getinfo($ch,CURLINFO_HTTP_CODE);curl_close($ch);
+  fclose($out);
+  if(!$ok){status('ERROR download '.$code.' '.$err);exit(12);}
  }else{
-  $cmd='unzip -p '.escapeshellarg($archive).' '.escapeshellarg($entry).' > '.escapeshellarg($tmp);
-  exec($cmd.' 2>&1',$out,$rc);if($rc!==0){logm('UNZIP_FAIL '.$entry);exit(7);}
+  $in=@fopen($src,'rb');if(!$in){fclose($out);status('ERROR remote fopen');exit(13);}
+  stream_copy_to_stream($in,$out);fclose($in);fclose($out);
  }
- if(filesize($tmp)<100000){logm('EMPTY '.$dest);exit(8);}
- rename($tmp,$path);chmod($path,0644);logm('INSTALLED '.$dest.' '.filesize($path));
+ clearstatcache(true,$temp);
+ status('DOWNLOADED_BYTES '.filesize($temp));
+ if(filesize($temp)<80000000){status('ERROR undersized');exit(14);}
+ rename($temp,$zipfile);
 }
-if($zip)$zip->close();
-$ff=trim((string)shell_exec('command -v ffmpeg'));
-logm('FFMPEG_PATH '.($ff?:'UNAVAILABLE'));
-$derive=['v-401.mp4'=>'h-401.mp4','v-410.mp4'=>'h-410.mp4','v-503.mp4'=>'h-503.mp4'];
-if($ff&&is_executable($ff)){
- foreach($derive as $dst=>$src){
-  if(is_file($target.'/'.$dst)&&filesize($target.'/'.$dst)>30000)continue;
-  $tmp=$target.'/'.$dst.'.tmp.mp4';
-  $cmd=escapeshellarg($ff).' -y -nostdin -hide_banner -loglevel error -i '.escapeshellarg($target.'/'.$src).
-  ' -t 9 -an -vf '.escapeshellarg('scale=540:960:force_original_aspect_ratio=increase,crop=540:960').
-  ' -c:v libx264 -preset ultrafast -crf 32 -pix_fmt yuv420p -movflags +faststart '.escapeshellarg($tmp).' 2>&1';
-  exec($cmd,$err,$rc);
-  if($rc===0&&is_file($tmp)&&filesize($tmp)>30000){rename($tmp,$target.'/'.$dst);chmod($target.'/'.$dst,0644);logm('CROPPED '.$dst);}
-  else {logm('CROP_FAILED '.$dst.' '.implode(' ',array_slice($err,-2)));@unlink($tmp);}
- }
+if(!class_exists('ZipArchive')){status('ERROR no ZipArchive');exit(15);}
+$za=new ZipArchive();if($za->open($zipfile)!==true){status('ERROR invalid zip');exit(16);}
+foreach($names as $dest=>$origin){
+ $path=$vid.'/'.$dest;
+ if(is_file($path)&&filesize($path)>100000){status('KEEP '.$dest);continue;}
+ $in=$za->getStream($origin);
+ if(!$in){status('ERROR missing entry '.$origin);exit(17);}
+ $temp=$path.'.temp';$out=fopen($temp,'wb');
+ if(!$out){fclose($in);status('ERROR cannot create '.$temp);exit(18);}
+ $copied=stream_copy_to_stream($in,$out);fclose($in);fclose($out);
+ if($copied<100000){status('ERROR empty '.$dest);exit(19);}
+ rename($temp,$path);chmod($path,0644);status('INSTALLED '.$dest.' '.$copied);
 }
-$js="(()=>{const v=document.querySelector('[data-error-video]');if(!v)return;const code=v.dataset.code;const mobile=matchMedia('(max-width:700px), (orientation:portrait)').matches;const base='/error_pages/assets/videos/';const preferred=base+(mobile?'v-':'h-')+code+'.mp4';const fallback=base+'h-'+code+'.mp4';let usedFallback=false;v.addEventListener('error',()=>{if(usedFallback)return;usedFallback=true;v.src=fallback;v.load();v.play().catch(()=>{});});v.src=preferred;v.load();v.play().catch(()=>{});})();";
-file_put_contents($base.'/public_html/error_pages/assets/js/error.js',$js);
-logm('READY');
+$za->close();
+$js="(()=>{const v=document.querySelector('[data-error-video]');if(!v)return;const code=v.dataset.code;const mobile=matchMedia('(max-width:700px), (orientation:portrait)').matches;const b='/error_pages/assets/videos/';const first=b+(mobile?'v-':'h-')+code+'.mp4';const fallback=b+'h-'+code+'.mp4';let swapped=false;v.addEventListener('error',()=>{if(swapped)return;swapped=true;v.src=fallback;v.load();v.play().catch(()=>{});});v.src=first;v.load();v.play().catch(()=>{});})();";
+file_put_contents($root.'/public_html/error_pages/assets/js/error.js',$js);
+status('COMPLETE all nine originals installed');
